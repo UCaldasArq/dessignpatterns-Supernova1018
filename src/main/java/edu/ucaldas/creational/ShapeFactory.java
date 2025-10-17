@@ -8,11 +8,17 @@ package edu.ucaldas.creational;
 
 public class ShapeFactory {
     public Shape createShape(String type) {
-        // TODO: completa la lógica de creación
-        return null;
+        if (type == null) return null;
+
+        switch (type.toLowerCase()) {
+            case "circle":
+                return new Circle();
+            case "square":
+                return new Square();
+            default:
+                System.out.println("Tipo de figura no reconocido.");
+                return null;
+        }
     }
 }
 
-// TODO: Implementa las clases Circle y Square
-// Circle → "Dibujando un círculo."
-// Square → "Dibujando un cuadrado."
